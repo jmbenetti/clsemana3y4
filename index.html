@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challenge Lógica semana 3 y 4</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 class="titulo">Ahorcado</h1>
+
+  <main class="main">
+    <section class="seccionletras">
+      <div id="resolver">
+        <input type="text" id="txtresultadofiltrado" value="" disabled>
+        <!-- <input type="text" id="txtresolver" value="" disabled> -->
+        <!-- <input type="text" id="txtaciertos" value="" disabled> -->
+      </div>
+      <div id="inputletras">
+        <h2 id="" class="h2letra">Su letra</h2>
+        <input class="text-input" type="text" id="letraelegida" maxlength="1" size="1" style="text-transform:uppercase"></input>
+        <!-- <input class="btn" type="button" onClick="sumarError()" value="Sumar Error" id="btn-error"> -->
+        <input class="btn" type="button" onClick="procesarLetra()" value="Enviar" id="btn-procesar">
+        <input class="btn" type="button" onClick="reiniciar()" value="Reiniciar" id="btn-reiniciar">
+        <!-- <input type="text" id="buscada" value="Prueba" disabled> -->
+        <!-- <input type="text" id="errores" value="0" disabled> -->
+      </div>
+      <div id="diverrores"> 
+        <h2 id="" class="h2letra">Errores</h2>
+        <input type="text" id="listaerrores" value="" disabled>
+      </div>
+      </section>
+  
+    <section class="secciondibujo">
+        <!-- <h2 id="">Estado</h2> -->
+        <img src="imagenes/fondo.png" id="imgfondo">
+        <img src="imagenes/0.png" id="img0">
+        <img src="imagenes/1.png" class="imgpartes" id="img1">
+        <img src="imagenes/2.png" class="imgpartes" id="img2">
+        <img src="imagenes/3.png" class="imgpartes" id="img3">
+        <img src="imagenes/4.png" class="imgpartes" id="img4">
+        <img src="imagenes/5.png" class="imgpartes" id="img5">
+        <img src="imagenes/6.png" class="imgpartes" id="img6">
+        <img src="imagenes/7.png" class="imgpartes" id="img7">
+        <img src="imagenes/8.png" class="imgpartes" id="img8">
+        <img src="imagenes/9.png" class="imgpartes" id="img9">
+        <img src="imagenes/10.png" class="imgpartes" id="img10">
+        <img src="imagenes/11.png" class="imgpartes" id="img11">
+        <img src="imagenes/12.png" class="imgpartes" id="img12">
+        <img src="imagenes/13.png" class="imgpartes" id="img13">
+        <img src="imagenes/14.png" class="imgpartes" id="img14">
+    </section>
+
+    <div id="divmensaje">
+    <p id="textomensaje">FIN DEL JUEGO<p>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
