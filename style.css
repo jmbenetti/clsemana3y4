@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --posicionhorca: 800px;
+}
+
 body {
   background-color: #B5651D;
   font-family: Tahoma, Verdana, Geneva, sans-serif;
@@ -16,7 +20,7 @@ body {
   justify-content: center;
 }
 
-.titulo {
+#titulo {
   padding: 15px;
   width: 30vw;
   margin: auto;
@@ -80,16 +84,12 @@ body {
     float: left;
   }
 
-  .h2letra {
+  #suletra {
     text-align: center;
   }
 
-  #img0
-  {
-    position: absolute;
-    left: 600px;
-    top: 0px;
-    z-index: 0;
+  #listeerrores {
+    text-align: center;
   }
 
   #divmensaje
@@ -120,13 +120,22 @@ body {
     border: 5px solid #555;
   }
 
+  #img0
+  {
+    position: absolute;
+    z-index: 0;
+     left: var(--posicionhorca);
+    top: 0px;
+  }
+
   .imgpartes
   {
     position: absolute;
-    left: 600px;
+    left: var(--posicionhorca);
     top: 0px;
     display: none;
   }
+
 
   #img1
   {
@@ -136,118 +145,69 @@ body {
 
   #img2
   {
-    position: absolute;
-    left: 600px;
-    top: 0px;
     z-index: 2;
   }
 
 
   #img3
     {
-      position: absolute;
-      left: 600px;
-      top: 0px;
       z-index: 3;
     }
 
 
   #img4
-    {
-      position: absolute;
-      left: 600px;
-      top: 0px;
+  {
       z-index: 4;
     }
 
 
   #img5
     {
-      position: absolute;
-      left: 600px;
-      top: 0px;
       z-index: 5;
     }
 
 
   #img6
     {
-      position: absolute;
-      left: 600px;
-      top: 0px;
       z-index: 6;
     }
 
 
   #img7
     {
-      position: absolute;
-      left: 600px;
-      top: 0px;
       z-index: 7;
     }
 
 
   #img8
     {
-      position: absolute;
-      left: 600px;
-      top: 0px;
       z-index: 8;
     }
 
 
   #img9
     {
-      position: absolute;
-      left: 600px;
-      top: 0px;
       z-index: 9;
     }
 
 
   #img10
     {
-      position: absolute;
-      left: 600px;
-      top: 0px;
       z-index: 10;
     }
 
 
   #img11
     {
-      position: absolute;
-      left: 600px;
-      top: 0px;
       z-index: 11;
     }
 
-
-  #img12
+    .outline
     {
-      position: absolute;
-      left: 600px;
-      top: 0px;
-      z-index: 12;
-    }
-
-
-  #img13
-    {
-      position: absolute;
-      left: 600px;
-      top: 0px;
-      z-index: 13;
-    }
-
-
-  #img14
-    {
-      position: absolute;
-      left: 600px;
-      top: 0px;
-      z-index: 14;
-      display: none;
+      text-shadow:
+      -1px -1px 0 white,
+      1px -1px 0 white,
+      -1px 1px 0 white,
+      1px 1px 0 white;  
     }
 

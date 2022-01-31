@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1 class="titulo">Ahorcado</h1>
+  <h1 id="titulo" class="outline">Ahorcado</h1>
 
   <main class="main">
     <section class="seccionletras">
@@ -18,7 +18,7 @@
         <!-- <input type="text" id="txtaciertos" value="" disabled> -->
       </div>
       <div id="inputletras">
-        <h2 id="" class="h2letra">Su letra</h2>
+        <h2 id="suletra" class="outline">Su letra</h2>
         <input class="text-input" type="text" id="letraelegida" maxlength="1" size="1" style="text-transform:uppercase"></input>
         <!-- <input class="btn" type="button" onClick="sumarError()" value="Sumar Error" id="btn-error"> -->
         <input class="btn" type="button" onClick="procesarLetra()" value="Enviar" id="btn-procesar">
@@ -27,7 +27,7 @@
         <!-- <input type="text" id="errores" value="0" disabled> -->
       </div>
       <div id="diverrores"> 
-        <h2 id="" class="h2letra">Errores</h2>
+        <h2 id="" id="listaerrores" class="outline">Errores</h2>
         <input type="text" id="listaerrores" value="" disabled>
       </div>
       </section>

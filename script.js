@@ -21,8 +21,8 @@ const MAXERRORES = 11;
 
 audioWin = new Audio("sonidos/ganaste.mp3");
 audioLose = new Audio("sonidos/perdiste.mp3");
-audioAcierto = new Audio("sonidos/acierto.mp3");
-audioError = new Audio("sonidos/error.mp3");
+audioAcierto = new Audio("sonidos/acierto.wav");
+audioError = new Audio("sonidos/error.wav");
 
 //Agrego el evento para llamar al click del botón al apretar Enter en el input
 
@@ -45,14 +45,16 @@ function filtrarResultado()
 	 	bEsAcierto = false;
 	 	for (var i=0; i< szAciertos.length; i++)
 	 	{
-	 		if(szPalabraActual.substring(j, j + 1) == szAciertos.substring(i, i + 1)) 
+	 		// if(szPalabraActual.substring(j, j + 1) == szAciertos.substring(i, i + 1)) 
+	 		if(szPalabraActual.charAt(j) == szAciertos.charAt(i)) 
 	 		{
 	 			bEsAcierto = true;
 	 		}
 	 	}
 		if(bEsAcierto)
 		{
-			szResultadoFiltrado+= szPalabraActual.substring(j, j + 1);
+			// szResultadoFiltrado+= szPalabraActual.substring(j, j + 1);
+			szResultadoFiltrado+= szPalabraActual.charAt(j);
 		}
 		else
 		{
@@ -70,7 +72,8 @@ function sumarError()
 
 	for(var j=0; j<szErrores.length; j++)
 			{
-				if(szErrores.substring(j, j + 1) == szLetraElegida) 
+				// if(szErrores.substring(j, j + 1) == szLetraElegida) 
+				if(szErrores.charAt(j) == szLetraElegida) 
 				 {
 				 	bErrorExiste = true;
 				 }
@@ -123,7 +126,8 @@ function procesarLetra()
 			// alert(szPalabraActual.length);
 			for(var j=0; j<szPalabraActual.length; j++)
 				{
-					if(szPalabraActual.substring(j, j + 1) == szLetraElegida) 
+					// if(szPalabraActual.substring(j, j + 1) == szLetraElegida) 
+					if(szPalabraActual.charAt(j) == szLetraElegida) 
 					 {
 					 	bEncontrada = true;
 					 	sumarAcierto();
@@ -146,7 +150,8 @@ function reiniciar()
 	szPalabraActual = szPalabra[nAleatorio];
 
 	//Siempre cuento la inicial como un primer acierto
-	szAciertos=szPalabraActual.substring(0,1);
+	//szAciertos=szPalabraActual.substring(0,1);
+	szAciertos=szPalabraActual.charAt(0);
 	// document.getElementById("buscada").value = szPalabraActual;
 
 	filtrarResultado();
