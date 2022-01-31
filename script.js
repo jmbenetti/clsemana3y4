@@ -13,7 +13,10 @@ var audioWin;
 var audioLose;
 var audioAcierto;
 var audioError;
+var tmpAnimarPlanta;
 const MAXERRORES = 11;
+var nInicioPlanta = 1200;
+var nPosActualPlanta = 1200;
 
 //Cargo la lista de palabras
 
@@ -33,7 +36,18 @@ document.getElementById("letraelegida").addEventListener("keyup", function(event
   }
 });
 
+nPosActualPlanta = nInicioPlanta;
+
+setInterval(function () {
+	if(bAnimarPlanta)
+	{
+		nPosActualPlanta = nPosActualPlanta - 25;
+		document.getElementById("imgplanta").style.left = nPosActualPlanta + "px";
+	}
+}, 300);
+
 reiniciar();
+
 
 function filtrarResultado()
 {
@@ -142,6 +156,7 @@ function procesarLetra()
 
 function reiniciar()
 {
+	bAnimarPlanta = false;
 	nErrores = 0;
 	szErrores = "";
 	//szAciertos = "";
@@ -160,7 +175,17 @@ function reiniciar()
 	document.getElementById("letraelegida").select();
 	document.getElementById("letraelegida").focus();
 	bTerminado = false;
+	nPosActualPlanta = nInicioPlanta;
+	bAnimarPlanta = false;
+	const tmpAnimarPlanta = setTimeout(animarPlanta, 20000);
+
 }
+
+function animarPlanta()
+{
+	bAnimarPlanta = true;
+}
+
 
 function mostrarPartes()
 {
