@@ -72,11 +72,13 @@ function filtrarResultado()
 		}
 		else
 		{
-			szResultadoFiltrado += "-";
+			// szResultadoFiltrado += "-";
+			szResultadoFiltrado += " ";
 		}
 		
 	}
-	document.getElementById("txtresultadofiltrado").value = szResultadoFiltrado;
+	// document.getElementById("txtresultadofiltrado").value = szResultadoFiltrado;
+	document.getElementById("txtresultadofiltrado").innerHTML = szResultadoFiltrado;
 }
 
 function sumarError()
@@ -156,10 +158,15 @@ function procesarLetra()
 
 function reiniciar()
 {
+	var szGuiones = "";
+
 	bAnimarPlanta = false;
+	nPosActualPlanta = nInicioPlanta;
+	document.getElementById("imgplanta").style.left = nPosActualPlanta + "px";
 	nErrores = 0;
 	szErrores = "";
 	//szAciertos = "";
+	szResultadoFiltrado = "";
 	mostrarPartes();
 	nAleatorio = Math.round(Math.random() * nTotalPalabras);
 	szPalabraActual = szPalabra[nAleatorio];
@@ -169,6 +176,12 @@ function reiniciar()
 	szAciertos=szPalabraActual.charAt(0);
 	// document.getElementById("buscada").value = szPalabraActual;
 
+	//Pongo los guiones abajo de cada letra
+	for(var j=0; j<szPalabraActual.length; j++)
+	{
+		szGuiones += "-";
+	}
+	document.getElementById("txtguiones").innerHTML = szGuiones;
 	filtrarResultado();
 	document.getElementById("divmensaje").style.display = "none";
 	document.getElementById("letraelegida").disabled = false;
@@ -203,7 +216,8 @@ function mostrarPartes()
 		}
 		
 	}
-	document.getElementById("listaerrores").value = szErrores;
+	// document.getElementById("listaerrores").value = szErrores;
+	document.getElementById("listaerrores").innerHTML = szErrores;
 	// alert(szAciertos);
 	// document.getElementById("txtaciertos").value = szAciertos;
 	document.getElementById("letraelegida").select();
@@ -213,19 +227,21 @@ function mostrarPartes()
 	if(szPalabraActual==szResultadoFiltrado && szPalabraActual != "")
 	{
 		//Ganó el juego
-		document.getElementById("textomensaje").innerHTML = "¡GANASTE!";
+		document.getElementById("textomensaje").innerHTML = "¡GANASTE, FELICIDADES!";
 		document.getElementById("divmensaje").style.display = "block";
 		bTerminado = true;
 		document.getElementById("letraelegida").disabled = true;
 		audioWin.play();
+		bAnimarPlanta = false;
 	}
 	if(nErrores==MAXERRORES)
 	{
 		//Perdió
-		document.getElementById("textomensaje").innerHTML = "PERDISTE";
+		document.getElementById("textomensaje").innerHTML = "FIN DEL JUEGO";
 		document.getElementById("divmensaje").style.display = "block";
 		bTerminado = true;
 		document.getElementById("letraelegida").disabled = true;
 		audioLose.play();
+		bAnimarPlanta = false;
 	}
 }

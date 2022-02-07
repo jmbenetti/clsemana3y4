@@ -25,7 +25,15 @@ body {
   padding: 15px;
   width: 30vw;
   margin: auto;
+  line-height: 300%;
 
+}
+
+#tituloerrores {
+  padding: 15px;
+  width: 30vw;
+  text-align: center;
+  margin: auto;
 }
 
 .box {
@@ -36,6 +44,10 @@ body {
   border-radius: 0.5em;
   width: 30vw;
   height: auto;
+}
+
+#botones {
+  margin-left: 130px;
 }
 
 .btn {
@@ -64,11 +76,23 @@ body {
 }
 
 #txtresultadofiltrado {
-  width:  auto;
-  font-size: large;
+  font-size: 50px;
   text-align: center;
+  font-family: Courier, "Lucida Console", monospace;
+  line-height: 0%;
 }
 
+#txtguiones {
+  font-size: 50px;
+  text-align: center;
+  font-family: Courier, "Lucida Console", monospace;
+}
+
+#listaerrores {
+  font-size: 40px;
+  text-align: center;
+  font-family: Courier, "Lucida Console", monospace;
+}
   #inputletras {
     display:  block;
   }
@@ -99,8 +123,8 @@ body {
     border-radius: 0.5em;
     background-color: gray;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    left: 360px;
-    top: 100px;
+    left: 400px;
+    top: 130px;
     z-index: 15;
     display: none;
   }
@@ -110,6 +134,10 @@ body {
     font-size: 60px;
     font-weight: bolder;
     color:  white;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 8em;
   }
 
   #imgfondo
@@ -238,9 +266,19 @@ body {
       background-color: var(--colorfondo);;
       position: absolute;
       height: 610px;
-      width: 600px;
+      width: 200px;
       left: 1110px;
       top: 0px;
       z-index: 12;
     }
+  footer {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: brown;
+    color: white;
+    text-align: center;
+  }
+
 
